@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>Energy Utility</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"> 
+
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+
+  	<link href="css/index.css" rel="stylesheet">
+  
+  	<script src="js/login.js"></script>
+  	<script src="js/market_message.js"></script>
+  	<script src="js/graph_1.js"></script>
+    <script src="js/graph_2.js"></script>
+    <script src="js/graph_3.js"></script>
+
+</head>
+
+<body>
+     
+    <div class="container-fluid">
+        <div class="row">
+			 <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3" style="background-color:#eaeaea;height:50px">
+				<div class="logo">
+					<img src="images/atoslogo.png" alt="atoslogo" title="atoslogo" class="img-responsive">
+				</div> 
+			</div>
+						
+			<div class="col-lg-9 col-md-9 col-sm-6 col-xs-5" style="background-color:#eaeaea;height:50px">
+			    <div class="search-custom"> 
+			        <ul class="nav navbar-nav navbar-right">	
+		    	        <li><input type="text" class="form-control" placeholder="Search" size="15px"></li>		
+		            	<li><button class="btn btn-default" type="submit">
+            				<i class="glyphicon glyphicon-search"></i></li>	
+					</ul>
+				</div>
+			</div>
+						
+			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2" style="background-color:#eaeaea;height:50px">
+			    <div class="log-in-user"> 
+				    Welcome<br>Mr. Kranti<br>Id : AAJPE1569
+				</div>
+			</div>
+						
+			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2" style="background-color:#eaeaea;height:50px">
+			    <div class="user-account"> 
+				    <ul class="nav navbar-nav navbar-right">
+				    	<li>
+		                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account<b class="caret"></b></a>
+		                    <ul class="dropdown-menu multi-level" id="sub_nav">
+		                        <li><a href="#">My Orders</a></li>
+								<li><a href="#">My Preferences</a></li>
+								<li><a href="#">FTR</a></li>
+		                        <li><a href="index.html">Logout</a></li>
+		                    </ul>
+	                	</li>
+				    </ul>
+			    </div>
+			</div>
+			
+		</div> <!-- end of header row -->
+		
+		<div class="row">
+		    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:#006599;height:51px">
+			    <div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav" id="nav">
+						<li><a href="index.html">Home</a></li>
+						<li>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
+								<ul class="dropdown-menu multi-level" id="sub_nav">
+									<li><a href="#">Our Vision</a></li>
+									<li><a href="#">Our Mission</a></li>
+									<li><a href="#">Director's Desks</a></li>
+									<li><a href="#">Social Engagements</a></li>
+									<li><a href="#">Gallery</a></li>									
+								</ul>
+						</li>
+						
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Consumers<b class="caret"></b></a>
+								<ul class="dropdown-menu multi-level" id="sub_nav">
+									<li><a href="#">Domestic</a></li>
+									<li><a href="#">Industrial</a></li>
+									<li><a href="#">Agricultural</a></li>
+									<li><a href="#">Corporate</a></li>
+									<li><a href="#">Commercial</a></li>
+									<li><a href="#">Govt.</a></li>
+									<li><a href="#">VIP's</a></li>
+									<li><a href="#">Others</a></li>									
+								</ul>
+						</li>
+
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Suppliers<b class="caret"></b></a>
+								<ul class="dropdown-menu multi-level" id="sub_nav">
+									<li><a href="#">Engineerings</a></li>
+									<li><a href="#">Logistics</a></li>
+									<li><a href="#">Maintainance</a></li>
+									<li><a href="#">Fuel & Oil</a></li>
+									<li><a href="#">Manpower</a></li>
+									<li><a href="#">Others</a></li>	                            
+								</ul>
+						</li>
+					  
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Traders <b class="caret"></b></a>
+							<ul class="dropdown-menu multi-level" id="sub_nav">
+								<li class="dropdown-submenu">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Category1</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">ESB Int.</a></li>
+										<li><a href="#">GTAMS</a></li>
+										<li><a href="#">AEM Milan</a></li>
+										<li><a href="#">Vattenfal Ltd.</a></li>
+										<li><a href="#">SEAI</a></li>
+										<li><a href="#">Fortum</a></li>
+										<li><a href="#">See All</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Category2</a></li>
+								<li><a href="#">Category3</a></li>                 	                        	          
+							</ul>
+						</li>  
+
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Simulator <b class="caret"></b></a>
+							<ul class="dropdown-menu multi-level" id="sub_nav">
+								<li><a href="#">Generation Capacity Forecast</a></li>
+								<li><a href="#">Demand Forecast</a></li>
+								<li><a href="#">Demand Side Price</a></li>	                        
+								<li><a href="EnergyPurchaseDecision1.html">Energy purchase decision</a></li>
+								<li><a href="#">Energy sales Price rules Engines</a></li>
+								<li><a href="#">Energy sales decision</a></li>  
+								<li><a href="#">Auction Guiding Engine</a></li>
+								
+								<li class="dropdown-submenu">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Trading</a>
+									<ul class="dropdown-menu">
+										<li><a href="option.html">Options</a></li>
+										<li><a href="#">Futures</a></li>
+										<li><a href="#">Forwards</a></li>
+										<li><a href="#">SWAPs</a></li>
+										<li><a href="#">Quick Trade</a></li>									
+									</ul>
+								</li>
+							</ul>
+						</li>  
+						
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Reports<b class="caret"></b></a>
+								<ul class="dropdown-menu multi-level" id="sub_nav">
+									<li><a href="#">Profit & Loss</a></li>
+									<li><a href="#">Balance Sheet</a></li>
+									
+									<li class="dropdown-submenu">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Transactions</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Journal</a></li>
+											<li><a href="#">Ledger</a></li>
+											<li><a href="#">Cash Flow</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Dues</a></li>
+									<li><a href="#">Others</a></li>
+								</ul>
+						</li>
+						
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
+								<ul class="dropdown-menu multi-level" id="sub_nav">
+									<li><a href="#">Manage Roles</a></li>
+									<li><a href="#">Manage Users</a></li>
+									<li><a href="#">Manage Site</a></li>
+									<li><a href="#">Site Logs</a></li>
+									<li><a href="#">Site Usage</a></li>
+									<li><a href="#">Alerts</a></li>	 
+									<li><a href="#">Logs</a></li>	                            
+								</ul>
+						</li>
+						
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Help<b class="caret"></b></a>
+								<ul class="dropdown-menu multi-level" id="sub_nav">
+									<li><a href="#">Topics</a></li>
+									<li><a href="#">FAQ</a></li>	 
+									<li><a href="#">Contact Us</a></li>	     
+									<li><a href="#">Feedback</a></li>	                                                   
+								</ul>
+						</li>
+					</ul> 
+		   	    </div>	
+			</div> <!-- end of columns division -->
+		</div><!-- end of navigation row -->
+		
+		<div class="row"> <!-- middle section-->
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-color:white;height:552px;">          
+                <div class="navbar sidebar-nav" role="navigation">                                           
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Schedule Power Cut</a></li>
+                        <li><a href="#">Accidental Cut</a></li>
+						<li><a href="#">Planed Cut</a></li>
+						<li><a href="#">PPA Details</a></li>
+						<li><a href="#">RPO</a></li>
+			            <li><a href="#">Network Status</a></li>
+                        <li><a href="#">DSM Slabs</a></li>
+                    </ul>
+                     <!--/.nav-collapse -->
+                </div>
+			</div>
+	
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" style="background-color:white;height:552px;"> <!-- graph code -->		
+				<div class="custom-btn-group">						
+					<div class="btn-group">
+						<button id="btn_graph1" type="button" class="btn btn-default">Graph 1</button>
+						<button id="btn_graph2" type="button" class="btn btn-default">Graph 2</button>
+						<button id="btn_graph3" type="button" class="btn btn-default">Graph 3</button>
+					</div>
+				</div>	
+				<div id="chartContainer"></div>					
+			</div> <!-- graph code ends here -->
+		
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4" style="background-color:white; height:552px;">
+				<div class="msg_body">  <!--Carousel section -->
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">								    
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" align="center" id="marketNews">
+							<div class="item active">
+								<ul class="ObjPageMain">
+									Market News <br>
+									<% for(var i=0; i<ObjPageMain.marketNews.length; i++) {%>
+									<li>
+									<span><%= ObjPageMain.marketNews[i].date %></span>
+									<span>(<%= ObjPageMain.marketNews[i].time %>)</span><br>
+									<span>Exchange: <%= ObjPageMain.marketNews[i].market_name %></span><br>
+									<span id="market_news_url"><a href=<%= ObjPageMain.marketNews[i].external_url %>>
+									<%= ObjPageMain.marketNews[i].news_text %>
+									</a></span><br>
+									</li><br><% } %>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="carousel-inner" id="todaysIndices" align="center" style="display:none">
+							<div class="item active">
+								Today's Incides<br><br>
+								<% for(var i=0; i<ObjPageMain.marketIndices.length; i++) {%>
+								<li class="ObjPageMain">
+								<span><%= ObjPageMain.marketIndices[i].exchange_name %></span>
+								<span> / <%= ObjPageMain.marketIndices[i].market_type %></span>
+								<span> / <%= ObjPageMain.marketIndices[i].param %></span>
+								<span>=<%= ObjPageMain.marketIndices[i].value %></span><br>
+								</li><br><% } %>
+							</div>									   
+						</div>
+
+						<!-- Left and right controls -->
+						<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+							 <span class="glyphicon glyphicon-chevron-left"></span>
+							 <span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#myCarousel" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				
+				
+					<div class="custom-buttons">
+						<button class="btn-info btn">Market News</button>
+						<span style="width:5em;"> </span>
+						<button class="btn-info btn">Today's Indices </button>
+					</div>		
+			
+				</div>  <!--Carousel section ends-->
+			</div>
+		</div> <!-- end of middle section row (sidebar+graph+carousel)-->	
+			
+		<div class="row"> <!-- 4 buttons -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:50px">            
+				<button class="button button1">Climate Data</button>
+				<button class="button button1">Todays Market</button>
+				<button class="button button1">Power Cut</button>
+				<button class="button button1">Network Data</button>
+			</div>
+		</div> <!--4 buttons code ends -->		
+
+		<div class="row"> <!-- bottom tickers-->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height:50px"> 
+				<div class="bottom_tickers">	
+					
+					<marquee WIDTH="100%" style="background:#a6e9f9"  scrollamount="3">Zone South SG/41: Feeder A4 ,Feeder A4  Zone South AG/41: Feeder A5 ,Feeder A4  Zone West LH/41: Feeder A7,Feeder A4   Line Number 01/L02(South).<br>
+					
+					scrollamount="5">Zone South SG/41: Feeder A4 ,Feeder A4  Zone South AG/41: Feeder A5 ,Feeder A4  Zone West LH/41: Feeder A7,Feeder A4   Line Number 01/L02(South).</marquee>
+				</div><!--End of bottom tickers--> 
+			</div>	
+		</div> 		
+
+
+		<div class="row"> <!--footer -->
+			<div class="footer"> 
+				<footer>
+					<div class="pull-center ftr_space">
+						<p>Atos SE 2017 all rights reserved</p>
+					</div>
+				</footer>
+			</div>
+		</div> <!--footer ends here -->		
+					
+	</div> <!-- end of container-fluid -->
+	
+</body>			
+</html>			

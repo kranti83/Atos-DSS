@@ -1,0 +1,72 @@
+<html>
+
+<head>
+	<title>DSS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+	<link href="css/sell_put_center.css" rel="stylesheet">
+	<script src="js/sell_put_table.js"></script>
+</head>
+
+
+<body>
+	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:552px;">
+		<div class="row" style="margin-top:25px;">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:50px">
+				Time Period :<input type="text" name="timeperiod" size="8" disabled> Exchange :<input type="text" name="exchange" size="5"
+				 disabled> Volume :<input type="text" name="volume" size="5" placeholder="20 MWh" disabled> Option No:<input type="text"
+				 name="option_no" placeholder="P0001" size="3" disabled> In hand options:<input type="text" name="in_hand_options" placeholder="2"
+				 size="5" disabled> Lot size:<input type="text" name="lot_size" placeholder="10MWh" size="5" disabled> Expiry:
+				<input type="text" name="expiry" placeholder="30 days" size="5" disabled>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:341px">
+
+				<table class="table-striped table-bordered table-hovered" id="inner">
+					<tr style="background-color:#006699">
+						<th>Buyer Name</th>
+						<th>Rating</th>
+						<th>Ask PRICE<br>$/MWH</th>
+						<th>Ask Volume<br>(MWh)</th>
+						<th>Premium <br>price $/MWH</th>
+						<th>Location<br> (POC)</th>
+						<th>Type</th>
+						<th>Payback period<br>(days)</th>
+						<th>Net selling<br> price at<br>future value</th>
+						<th>Action</th>
+					</tr>
+					<% for(var i=0; i<optionsSellPut.length; i++) { %>
+						<tr>
+							<td><%= buyerSellPut[i].BuyerName %></td>
+                            <td><%= buyerSellPut[i].Rating %></td>
+                            <td><%= buyerSellPut[i].AskPRICE %></td>
+                            <td><%= buyerSellPut[i].AskVolume %></td>
+                            <td><%= buyerSellPut[i].OptPremium %></td>
+							<td><%= buyerSellPut[i].Location %></td>
+							<td><%= buyerSellPut[i].Type %></td>
+                            <td><%= buyerSellPut[i].PaybackPeriod %></td>  
+							<td>14+6-2=18</td>
+							<td><a href="/order_summary_sell_put">Trade</a> | <a href="/option_sell_put">Edit</a></td>
+						</tr>
+					<% } %>
+
+				</table>
+			</div>
+		</div>
+		<!--inner table ends-->
+	</div>
+	<div>
+		<%- include html-parts/index_right.html %>
+	</div>
+	<!-- end of middle section row (left + center +right)-->
+
+</body>
+
+</html>

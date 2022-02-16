@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>DSS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+
+	<link href="css/index.css" rel="stylesheet">
+	<script src="js/market_message.js"></script>
+	<link href="css/transaction.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:550px">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:70px">
+				<div class="topbuttons">
+					<a href="#" class="btn btn-info" role="button">Options</a>
+					<a href="#" class="btn btn-info" role="button">SWAPs</a>
+					<a href="#" class="btn btn-info" role="button">Futures</a>
+					<a href="#" class="btn btn-info" role="button">Forwards</a>
+					<a href="#" class="btn btn-info" role="button">FTR's/CFD's</a><br>
+				</div>
+				<!--End of top buttons part-->
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:50px">
+				 Time Period :<input type="text" name="timeperiod" value="2-3 Months" size="7" /> Exchange :<input type="text" name="timeperiod"
+				 value="NPS" size="3" /> Volume :<input type="text" name="volume" placeholder="50Mw" size="3" /> Option No:<input type="text"
+				 name="volume" placeholder="P0001" size="3" /> In hand options:
+				<input type="text" name="volume" placeholder="2" size="2" /> Lot size:<input type="text" name="volume" placeholder="10MWh"
+				 size="4" /> Expiry : <input type="text" name="volume" placeholder="30" size="2" />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+				<table class=" table-striped table-bordered table_transaction" style="height:345px;">
+
+					<caption style="text-align:center"><b>Transaction Details</b></caption>
+					<tr>
+						<td><strong>Transaction Number</strong></td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><strong>Date/Time</strong></td>
+						<td>11/07/2017</td>
+					</tr>
+					<tr>
+						<td><strong>Order Number</strong></td>
+						<td>P0015</td>
+					</tr>
+					<tr>
+						<td><strong>Transaction Type</strong></td>
+						<td>Sell/Put/2</td>
+					</tr>
+					<tr>
+						<td><strong>Quantity</strong></td>
+						<td>20 MWh</td>
+					</tr>
+					<tr>
+						<td><strong>Amount Received</strong></td>
+						<td>€ 40</td>
+					</tr>
+					<tr>
+						<td><strong>Point Of Delivery/drawal</strong></td>
+						<td>NPS/SW1/SW2</td>
+					</tr>
+					<tr>
+						<td><strong>Name</strong></td>
+						<td>Company C</td>
+					</tr>
+					<tr>
+						<td><strong>Address</strong></td>
+						<td>Gustavslundsvägen 141 B, 167 51 Bromma, Sweden</td>
+					</tr>
+					<tr>
+						<td><strong>Phone No</strong></td>
+						<td>+46 (0) 8 555 166 00 </td>
+					</tr>
+					<tr>
+						<td><strong>Email</strong></td>
+						<td>Org_C@SWNP.net</td>
+					</tr>
+
+				</table>
+
+				<div class="buttons">
+					<a href="/order_history_sell_put" class="btn btn-primary" role="button">Order History</a>
+					<a href="#" class="btn btn-primary bbtn" role="button">Print </a>
+					<a href="#" class="btn btn-primary bbtn" role="button">Download Receipt</a>
+				</div>
+				<!--End of bottom buttons part-->
+			</div>
+			<!-- End of body-->
+		</div>
+	</div>
+
+	<div>
+		<%- include html-parts/index_right.html %>
+	</div>
+	<!-- end of middle section row (left + center +right)-->
+
+</body>
+</html>

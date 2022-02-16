@@ -1,0 +1,54 @@
+.images_logos{
+   
+	  margin-top:450px
+  }
+.icons{
+	margin-left:100px
+  }
+table{
+   border: 1px solid black;
+    border-collapse: collapse;
+  background-color: white;
+  width: 100%;
+  height:100%;
+  }
+td, th {
+     padding: 3px;
+    text-align: left;
+}
+
+table#t1 {
+  width: 100%;
+  height:100%;   
+  border: none;
+    background-color: #9fc4c6;
+}
+table#t2{
+   width: 100%;
+  height:100%; 
+  border: none;
+    background-color: #9fc4c6;
+}
+table#t4{
+   width: 100%;
+  height:100%; 
+  border: none;
+    background-color: #9fc4c6;
+}
+table#t3{
+  width: 100%;
+  height:100%; 
+  border: none;
+    background-color: #9fc4c6;
+    
+}
+table#frame {
+  width: 100%;
+  height:100%;   
+  border: none;
+    background-color: #9fc4c6;
+}
+table#button_dropdown {
+ 
+  border: none;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/option.css" rel="stylesheet">
+    <script src="js/market_message.js"></script>
+    <script src="js/graph_1.js"></script>
+    <script src="js/option.js"></script>
+</head>
+
+<body>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:70px">
+                <div class="topbuttons">
+                    <a href="#" class="btn btn-info" role="button">Options</a>
+                    <a href="#" class="btn btn-info" role="button">SWAPs</a>
+                    <a href="#" class="btn btn-info" role="button">Futures</a>
+                    <a href="#" class="btn btn-info" role="button">Forwards</a>
+                    <a href="#" class="btn btn-info" role="button">FTR's/CFD's</a><br>
+                </div>
+                <!--End of top buttons part-->
+            </div>
+        </div>
+
+        <!--End of top buttons part-->
+
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="background-color:white;height:52px;">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div id="chartContainer"></div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="background-color:white;height:52px;">
+            <br><br><b>Select Time Period and Exchange:</b><br>
+            <select class="selectpicker" id="sel_time" data-width="100px">
+                <option value="?" selected="selected">Select Time Period</option>
+                <option value="1-2 Months" id="opt_1">1-2 Months</option>     
+                <option value="2-3 Months" id="opt_2">2-3 Months</option> 
+                <option value="3-4 Months" id="opt_3">3-4 Months</option> 
+                <option value="5-6 Months" id="opt_4">5-6 Months</option> 
+            </select>
+            <select class="selectpicker" id="sel_exchange" data-width="100px">
+                <option value="?" selected="selected">Select Exchange</option>
+                <option value="EEX" id="opt_eex">EEX</option>
+                <option value="NPS" id="opt_nps">NPS</option>
+                <option value="Fingrid" id="opt_fingrid">Fingrid</option>
+                <option value="PJM" id="opt_pjm">PJM</option>
+            </select><br><br><br><br><br>
+
+            <table border=0 width="250" class="table-striped table-hover" align="left">
+                <tr>
+                    <th>Spot Price</th>
+                    <th>Forecasted Price</th>
+                </tr>
+                <tr>
+                    <td id="td_spot">00.00</td>
+                    <td id="td_forecast">00.00</td>
+                </tr>
+            </table><br><br><br><br><br>
+
+            <div class="radio" id="radio1">
+                <table width="250">
+                    <tr>
+                        <th><b>Select an action:</b><br></th>
+                    </tr>
+                    <tr>
+                        <td><label><input type="radio" name="rad_opt" id="rad_bc">Buy Call</label></td>
+                        <td><label><input type="radio" name="rad_opt" id="rad_bp">Buy Put</label></td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="radio" name="rad_opt" id="rad_sc">Sell Call</label></td>
+                        <td><label><input type="radio" name="rad_opt" id="rad_sp">Sell Put</label></td>
+                    </tr>
+                    <tr>
+                        <td><br><a id="btn_continue" class="btn btn-info btn-sm">Continue</a></td>
+                    </tr>
+                </table>
+            </div> 
+        </div>
+    </div>
+
+    <div>
+        <%- include html-parts/index_right.html %>
+    </div>
+    <!-- end of middle section row (left + center +right)-->
+</body>
+
+</html>

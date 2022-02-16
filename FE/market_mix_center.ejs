@@ -1,0 +1,194 @@
+<html>
+
+<head>
+
+	<title>Energy Utility</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+	<link href="css/market_mix_center.css" rel="stylesheet">
+	<script src="js/graph_1.js"></script>
+	<script src="js/graph_2.js"></script>
+	<script src="js/graph_3.js"></script>
+
+	<!--<script src="js/graph_popup.js"></script>-->
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<br>
+					<%- include html-parts/short_term_trading_home2.html %>
+		</div>
+		<div class="row">
+			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:552px;">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="background-color:white;height:552px;">
+					<!-- left table code -->
+					<div class="left_tables">
+						<div class="row">
+							<!--Date + time slot + market type-->
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:137px;">
+								<div class="table_custom">
+									<table id="t1" border="0">
+										<tr>
+											<th><b>Date</b>&nbsp;</th>
+											<td><input type="text" name="date" placeholder="15/07/2017" size="8"></td><br></tr>
+										<tr>
+											<th><b> Time Slot&nbsp;</b></th>
+											<td><input type="text" name=" Time Slot" placeholder="19.00-19.15" size="8"></td>
+										</tr>
+										<tr>
+											<th><b>Market Type&nbsp;</b></th>
+											<td><input type="text" name="market Type" placeholder="Short Term" size="8"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--Date + time slot + market type row ends here-->
+						<div class="row">
+							<!--Date + time slot + market type-->
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:145px;">
+								<div class="table_custom">
+									<table id="t2" border="0">
+										<tr>
+											<th rowspan="2"><b>Forecasted Volume</b></th>
+											<td><input type="text" name="date" placeholder="1362.25 MW (Base)" size="14">
+												<input type="text" name=" Time Slot" placeholder="1496.8 MW (Peak)" size="14">
+											</td><br></tr>
+										<tr>
+											<td></td>
+										</tr>
+										<tr>
+											<th rowspan="2"><b>Deficite</b></th>
+											<td><input type="text" name="market Type" placeholder="346.26Mw(Base)" size="14">
+												<input type="text" name="market Type" placeholder="346.26Mw(Peak)" size="14">
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--Date + time slot + market type row ends here-->
+						<div class="row">
+							<!--Humidity row-->
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:209px;">
+								<div class="table_custom">
+									<table id="t3" border="0">
+										<caption><b><font color="black">Todays Weather</b></font>
+										</caption>
+										<tr>
+											<th><b>Temperature </b>&nbsp;</th>
+											<td><input type="text" name="Temperature " placeholder="27.2 C" size="8"><br></td>
+										</tr>
+										<tr>
+											<th><b>Humidity</b>&nbsp;</th>
+											<td><input type="text" name="Humidity" placeholder="86%" size="8"><br></td>
+										</tr>
+										<tr>
+											<th><b>Windspeed</b>&nbsp;</th>
+											<td><input type="text" name="Windspeed" placeholder="18.8" size="8"><br></td>
+										</tr>
+										<tr>
+											<th><b> Rain Fall</b>&nbsp;</th>
+											<td><input type="text" name=" Rain Fall" placeholder="80%" size="8"><br></td>
+										</tr>
+										<tr>
+											<th><b>Snow Fall</b>&nbsp;</th>
+											<td><input type="text" name="Snow Fall" placeholder="------" size="8"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--Humidity row ends here-->
+					</div>
+					
+				</div>
+				<!-- left table code ends here -->
+
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" style="background-color:white;height:422px; margin-top:10px">
+					<!-- graph code -->
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:426px; margin-top:20px">
+							<div id="chartContainer" style="height:420px;"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:40px;margin-left:64px;">
+							<button id="btn_graph1" type="button" class="btn btn-info">Market MIX</button>
+							<button id="btn_graph2" type="button" class="btn btn-info">Forecasting</button>
+							<button id="btn_graph3" type="button" class="btn btn-info">DAM Analysis</button>
+							<button id="btn_graph3" type="button" class="btn btn-info">Risk & Return</button>
+						</div>
+
+
+					</div>
+				</div>
+				<!-- graph code ends here -->
+
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-color:#9fc4c6;height:428px;margin-top:30px;">
+					<!-- paragraph code -->
+					<div class="Para">
+						<p>. Bid is having
+							<font style="color:blue"> 89.24% </font>probability of under market equilibrium.</p>
+						<p>. DAM Market is having
+							<font style="color:blue">10.53%(avg)</font> more expected return.</p>
+						<p>. DAM market Risk free bid
+							<font style="color:blue">(182.27-219.01)MW(28.72-30.76)</font>Eu/MWh</p>
+						<p>. Bid Time:
+							<font style="color:blue">10.00am -12.00am</font>
+						</p>
+						<p>. Market Result:
+							<font style="color:blue">3.00pm - 5.00 pm</font>
+						</p>
+						<p>. Confirmation
+							<font style="color:blue">5.00pm - 12.00am</font>
+						</p>
+					</div>
+				</div>
+				<!-- paragraph code ends here -->
+
+			</div>
+			<!-- column 9 code ends here -->
+
+			<div class="row">
+				<%- include html-parts/index_right.html %>
+			</div>
+		</div>
+		<div class="row">
+			<%- include html-parts/short_term_bottom.html %>
+		</div>
+
+	</div>
+	<!--<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="background-color:white;height:700px;"> 
+								
+								<div class="images_logos">						
+									<img src="images/logos.png" style="height:40%; width:55%">
+										<div class="icons">
+													<a target="_blank" href="http://www.twitter.com/PLACEHOLDER"><img alt="images/twitter.png" src="images/twitter.png" style="height:7%; width:10%" border=0></a>
+													<a target="_blank" href="http://www.youtube.com/PLACEHOLDER"><img src="images/youtube.png" style="height:10%; width:10%" border=0></a>
+												<img src="images/linkdin.jpg" style="height:7%; width:10%">			
+										</div>
+								</div>						
+							</div> -->
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

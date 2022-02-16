@@ -1,0 +1,160 @@
+<html>
+<head>
+
+<title>Energy Utility</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"> 
+
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+	<link href="css/dam_processing_center.css" rel="stylesheet">
+ </head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row"> 
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:552px;"> 
+					<div class="row"> 
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;margin-top:20px;"> 
+							<div class="middle_buttons" style="float: center;">
+								<label style="margin-left:10px"><font size="5%"<b>Order History</b></label>
+								<button type="button" class="btn btn-info" style="margin-left:40px">Back to Main Menu</button>&nbsp;&nbsp;&nbsp;
+								<button type="button" class="btn btn-info">Back to Forecast</button>&nbsp;&nbsp;&nbsp;
+								<button type="button" class="btn btn-info">Back to Market Mix</button>&nbsp;&nbsp;&nbsp;
+								<button type="button" class="btn btn-info">My Holdings</button>&nbsp;
+								<button type="button" class="btn btn-Info" style="margin-left:130px">Relode</button>
+							</div>
+						</div>
+					</div>
+						<div class="row"> 
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;margin-top:35px">          
+									<div class="table">	
+											<table class="table-striped table-bordered table-hovered" id="inner" align="center">
+																														  
+											  <tr style="background-color:#006699">
+												<th>    </th>
+												<th>Order No</th>
+												<th>Date</th> 
+												<th>Type</th>
+												<th>Exchange</th>
+												<th>No of options</th> 
+												<th>Lot Size (MWh)</th>
+												<th>Premium ($/MWh)</th>
+												<th>Price($/MWh)</th> 
+												<th>Volume(MW)</th>
+												<th>Status</th>
+												<th>Days to Expire</th>
+											  </tr>
+											  <tr>
+												<td><input type="checkbox" id="checkbox"></td>
+												<td>AQ217FH</td>
+												<td>11/07/2017</td>
+												<td>Sell/Put</td>
+												<td>NPS</td>
+												<td>2</td>
+												<td>10</td>
+												<td>2</td>
+												<td>14.00</td>
+												<td>20</td>
+												<td><font color="green">Complete</font></td>
+												<td>90</td>
+											  </tr>
+											  <tr>
+												<td><input type="checkbox" id="checkbox"></td>
+												<td>AQ107Fk</td>
+												<td>2/01/2017</td>
+												<td>Sell/Put</td>
+												<td>NPS</td>
+												<td>1</td>
+												<td>10</td>
+												<td>2</td>
+												<td>15.3</td>
+												<td>10</td>
+												<td><font color="red">Failed</font></td>
+												<td>0</td>
+											  </tr>
+											  <tr>
+												<td><input type="checkbox" id="checkbox"></td>
+												<td>AP053FH</td>
+												<td>15/03/2017</td>
+												<td>Sell/Put</td>
+												<td>NPS</td>
+												<td>3</td>
+												<td>5</td>
+												<td>2</td>
+												<td>16.8</td>
+												<td>15</td>
+												<td><font color="green">Complete</font></td>
+												<td>0</td>
+											  </tr>
+											  <tr>
+												<td><input type="checkbox" id="checkbox"></td>
+												<td>AQ107Fk</td>
+												<td>2/01/2017</td>
+												<td>Sell/Put</td>
+												<td>NPS</td>
+												<td>1</td>
+												<td>24</td>
+												<td>2</td>
+												<td>15.3</td>
+												<td>24</td>
+												<td><font color="red">Failed</font></td>
+												<td>0</td>
+											  </tr>
+											  <tr>
+												<td><input type="checkbox" id="checkbox"></td>
+												<td>DAM51638</td>
+												<td>13/07/2017</td>
+												<td>ShortTerm DAM</td>
+												<td>EEX</td>
+												<td>---</td>
+												<td>---</td>
+												<td>---</td>
+												<td>29.55/MW</td>
+												<td>199.96</td>
+												<td><font color="blue">Processing</font></td>
+												<td>14/07/2017</td>
+											  </tr>
+					   
+										</table><!--inner table ends-->
+											
+									</div>		
+								</div>	
+							</div>
+							<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;"> 
+											<div class="cancel_button"> 
+														
+												<button type="button" class="btn btn-primary" style="margin-right:18px;">Cancel</button>&nbsp;
+															
+											</div>
+									</div>
+								</div> 
+										<br>
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;"> 
+												<div class="bottom_button"> 
+														
+															 <button type="button" class="btn btn-primary" style="margin-right:18px;">Generate Certificate</button>&nbsp;
+															
+															 <button type="button" class="btn btn-primary" style="margin-right:15px;">Continue Treading</button>&nbsp;
+															
+															 <button type="button" class="btn btn-primary" style="margin-right:10px;">Generate reciept</button>&nbsp;
+															
+											  </div>
+									</div>
+								</div>  
+				
+ 		   </div>	
+	   </div>				
+							
+			
+					
+	</div>		
+	
+
+
+</body>
+</html>

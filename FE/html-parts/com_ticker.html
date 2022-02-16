@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <script src="../js/ticker.js"></script>
+</head>
+
+<body>
+
+    <!-- 4 buttons -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:50px">
+        <button class="button" id="btn_climate_data">Climate Data</button>
+        <button class="button" id="btn_todays_market">Todays Market</button>
+        <button class="button" id="btn_power_cut">Power Cut</button>
+        <button class="button" id="btn_network_data">Network Data</button>
+    </div>
+
+    <!--4 buttons code ends -->
+
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height:50px;">
+        <div class="bottom_tickers">
+            <div class="ticker_info" id="climate_data_tkr">
+                <marquee WIDTH="100%" scrollamount="3">
+                    Temperature : 27c/32c, Humidity : 82%, Rain chance : 70%, Wind Speed : 15 Km/hr , Snow : None Temperature : 27c/32c, Humidity
+                    : 82%, Rain chance : 70%, Wind Speed : 15 Km/hr
+                </marquee>
+            </div>
+            <div class="ticker_info" id="todays_market_tkr" style="display:none">
+                <marquee WIDTH="100%" scrollamount="3">
+                    Min : MCP 16.82Rs,MCV: 5650MW, Avg MCP : 19.91,MCV: 7565MW, Peak MCP: 22.31 MCV: 8865MW Min : MCP 16.82Rs,MCV: 5650MW, Avg
+                    MCP : 19.91,MCV: 7565MW
+                </marquee>
+            </div>
+            <div class="ticker_info" id="power_cut_tkr" style="display:none">
+                <marquee WIDTH="100%" scrollamount="3">
+                    Line Number 05/L010(East 2), Line Number 07/L09(North), Line Number 02/L08 Live Number 01/L02(South) Line Number 01/L02(South)
+                    Line Number 05/L010(East 2), Line Number 07/L09(North), Line Number 02/L08 Live
+                </marquee>
+            </div>
+            <div class="ticker_info" id="network_data_tkr" style="display:none">
+                <marquee WIDTH="100%" scrollamount="3">
+                    Zone South SG/41: Feeder A4 ,Feeder A4 Zone South AG/41: Feeder A5 ,Feeder A4 Zone West LH/41: Feeder A7,Feeder A4 Line Number
+                    01/L02(South). Zone South SG/41: Feeder A4 ,Feeder A4 Zone South AG/41: Feeder A5 ,Feeder A4 Zone W.
+                </marquee>
+            </div>
+        </div>
+        <!--End of bottom tickers-->
+    </div>
+
+
+</body>
+
+</html>

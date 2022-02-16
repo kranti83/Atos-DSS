@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Energy Utility</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"> 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+  <link href="css/industrial_center.css" rel="stylesheet">
+ <link href="css/forecast.css" rel="stylesheet">
+   <script src="js/short_term.js"></script>
+
+
+</head>
+
+<body>
+	<div class="container-fluid">
+
+		<div class="row">
+            <!-- middle nav -->
+            <%- include html-parts/short_term_trading_home.html %>
+        </div>
+
+		<div class="row"> 
+		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:500px;">	
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="background-color:white;height:500px;"> <!--Left side components-->
+                    <div class="row" > <!--Date + time slot + market type-->
+					    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:137px;"> 
+						    <div class="table_custom">
+						    <table id="t1" border="0"> 
+							<tr><td><b>Date</b>&nbsp;</td><td><input type="text" name="date" placeholder="15/07/2017" size="8"></td><br></tr>
+							<tr><td><b> Time Slot&nbsp;</b></td><td><input type="text" name=" Time Slot" placeholder="19.00-19.15" size="8"></td></tr>
+							<tr><td><b>Market Type&nbsp;</b></td><td><input type="text" name="market Type" placeholder="Short Term" size="8"></td></tr>
+						    </table>
+							</div>
+                        </div>						
+					</div> <!--Date + time slot + market type row ends here-->
+  
+                    <div class="row"> <!--Humidity row-->
+					    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:200px;"> 
+						    <div class="table_custom">
+						         <table id="t2" border="0"> 
+						             <caption><b>Todays Weather</b></caption>
+							         <tr><td><b>Temperature </b>&nbsp;</td><td><input type="text" name="Temperature " placeholder="27.2 C" size="8"><br></td></tr>
+							         <tr><td><b>Humidity</b>&nbsp;</td><td><input type="text" name="Humidity" placeholder="86%" size="8"><br></td></tr>
+							         <tr><td><b>Windspeed</b>&nbsp;</td><td><input type="text" name="Windspeed" placeholder="18.8" size="8"><br></td></tr>
+							         <tr><td><b> Rain Fall</b>&nbsp;</td><td><input type="text" name=" Rain Fall" placeholder="80%" size="8"><br></td></tr>
+							         <tr><td><b>Snow Fall</b>&nbsp;</td><td><input type="text" name="Snow Fall" placeholder="------" size="8"></td></tr>
+						         </table>
+							</div>
+                        </div>						
+					</div> <!--Humidity row ends here--> 
+					
+					<div class="row">
+					<button class="btn btn-primary" style="margin-left: 20px">My network</button>
+					</div>
+
+				</div><!--Left side components code ends here-->
+				
+				
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" style="background-color:white;height:500px;"> 	<!--Middle graph part-->
+				    <div class="row"> 
+					    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:500px;"> 
+                            <div class="graph">                                           
+								<img id="myImg" src="images\forecast.png"  style="background-color:white;height:490px; width:100%">
+										<div id="myModal" class="modal">
+									  <span class="close">&times;</span>
+									  <img class="modal-content" id="img01">
+									  <div id="caption"></div>
+										</div>
+
+									<script>
+									
+									var modal = document.getElementById('myModal');
+									var img = document.getElementById('myImg');
+									var modalImg = document.getElementById("img01");
+									var captionText = document.getElementById("caption");
+									img.onclick = function(){
+										modal.style.display = "block";
+										modalImg.src = this.src;
+										captionText.innerHTML = this.alt;
+									}
+
+									var span = document.getElementsByClassName("close")[0];
+									span.onclick = function() { 
+										modal.style.display = "none";
+									}
+									</script>
+							</div>	
+						</div>
+					</div>
+				</div>	<!--Middle graph part ends-->
+
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"  style="background-color:white;height:500px;"> <!--Peak Load msg column--> 
+					<div class="row"> 
+				     <div class="Para"  style="background-color:#9fc4c6; height:552px; padding:2px;">	 
+				         <tr><th>• peak load is more greater than previous<br> year<font color="green">(+09.7 %)</font><br><br></th></tr>
+				         <tr><th>• Frequency may go <br> down till<br><font color="blue">47.88 Hz)</font><br><br></th></tr>
+				         <tr><th>• Avg Voltage Drop<br><font color="blue"> (- 7.67%) on Vl (17.13kv</font><br><br></th></tr>
+				         <tr><th>• Option having in hand to meet demand <br> through Exchange<br><br></th></tr>
+				         <tr><th><font color="green">DAM</font><br></th></tr>
+				         <tr><th><font color="green">DAC</font><br></th></tr>
+				         <tr><th><font color="green">Intraday</font><br></th></tr>
+				     </div>
+					</div>
+				</div> <!--Peak Load msg column ends here--> 
+	</div>		<!--9 column ends here--> 	
+	
+	
+	
+				<div>
+        <%- include html-parts/index_right.html %>
+    </div>
+	
+
+
+		<div class="row">			
+			<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="background-color:white;">
+ 			 
+				<div>
+        		<%- include html-parts/short_term_bottom.html %>
+    			</div>
+			</div>
+ 		</div>	
+
+	</div>		<!--9 column row ends here--> 		
+	</div>				
+							
+</body>
+</html>

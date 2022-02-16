@@ -1,0 +1,97 @@
+<<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Energy Utility</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"> 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+  
+  <link href="css/industrial.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		
+		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:630px;"> 
+				<div class="row"> 	
+				 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:400px;">
+                    <div class="domestic_consumption">                         
+						<table id="1" border="1"> 
+						<caption><b><font color="blue">Industrial Consumer:</font></b></caption>
+							<tr><th colspan="4" style="text-align: center">Major Industrial Consumers</th></tr>
+							<tr><th>Sr No</th><th>Name</th><th>type</th><th>Consumption</th></tr><br><br>
+							<tr><td>1</td><td>Masa Yards</td><td>Ship building</td><td>4036.2</td></tr>
+						    <tr><td>2</td><td>Acer Maritime</td><td>Ship building</td><td>3228.96</td></tr>
+							<tr><td>10</td><td>Hollming Group</td><td>Ship building</td><td>3012.47</td></tr>
+							<tr><td>3</td><td>Nokia</td><td>Electronics</td><td>2018.1</td></tr>
+							<tr><td>4</td><td>Sonera Corporation</td><td>Telecom</td><td>2015.6</td></tr>
+							<tr><td>5</td><td>Alcom</td><td>Telecom</td><td>807.24</td></tr>
+							<tr><td>6</td><td>Ellisa</td><td>Telecom</td><td>775.35</td></tr>
+							<tr><td>7</td><td>Kesko Oyj</td><td>Consruction</td><td>704.92</td></tr>
+							<tr><td>8</td><td>SRV Yhtiöt Oyj</td><td>Consruction</td><td>665.68</td></tr>
+							<tr><td>9</td><td>NCC Suomi Oy</td><td>Consruction</td><td>598.66</td></tr>
+						</table>
+                    </div>
+				</div>	
+				</div>
+
+				<div class="row">
+			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:230px;">
+				    <table id="t01">
+	                    <tr><td><br><p><strong>Search by consumer Id</strong></p></td></tr>
+						<tr><td>
+							<div class="search-custom"> 
+						        <ul class="nav navbar-nav navbar-left">	
+		          			        <li><input type="text" class="form-control" placeholder="Search" size="50px"></li>
+					
+		            		        <li><button class="btn btn-default" type="submit">
+            					        <i class="glyphicon glyphicon-search"></i></li>	
+							    </ul>
+						    </div>
+						</td></tr>
+						<tr><td><strong>Search by consumer Name</strong></td></tr>
+						<tr><td>
+							<div class="search-custom"> 
+						        <ul class="nav navbar-nav navbar-left">	
+		          			        <li><input type="text" class="form-control" placeholder="Search" size="20px"></li>
+		            		        <li><button class="btn btn-default" type="submit">
+										<i class="glyphicon glyphicon-search"></i>
+									</li>	
+							    </ul>
+						    </div>
+						</td></tr>
+						<tr><td>
+						
+						<div class="topbuttons">
+						     <a href="#" class="btn btn-info" role="button">Cancel</a>
+						</div>
+						
+						</td></tr>
+					
+					</table>
+				</div>
+				</div>
+				
+
+
+		</div>	
+
+		<div>
+        	<%- include html-parts/index_right.html %>
+    		</div>
+
+					
+	</div>				
+
+	
+      
+
+</body>
+</html>

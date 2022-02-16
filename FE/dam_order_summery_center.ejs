@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Energy Utility</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"> 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+  <link href="css/industrial_center.css" rel="stylesheet">
+ <link href="css/order_summary.css" rel="stylesheet">
+
+ <script>
+function showDiv() {
+   document.getElementById('welcomeDiv').style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row"> 
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:552px; "> 
+                
+					<div class="row"  >
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:15%;padding-left:20px;"> 
+							<div class="middle_line_buttons" >
+							<a href="/dss"><button type="button" class="btn btn-primary">Back to Main Menu</button></a>&nbsp;
+							<a href="/forecast"><button type="button" class="btn btn-primary">Back to Forecast</button></a>&nbsp;
+							<a href="/market_mix"><button type="button" class="btn btn-primary">Back to Market Mix</button></a>&nbsp;
+							<button type="button" class="btn btn-primary">My Orders</button>&nbsp;
+							</div> <!--End of bottom buttons part--> 
+						</div>
+                    </div>
+					
+					<div class="row">
+						<div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:15%;"> 
+							<div class="top_placeholders" style="float: left;">
+						<br>	<b>Delivery Date :</b> <input type="text" name="timeperiod" value="14/07/2017" size="8">&nbsp;											 
+							<b>Time Period :</b> <input type="text" name="timeperiod" value="19.00 - 19.15" size="8">&nbsp;
+							<b>Exchange :</b><input type="text" name="timeperiod" value="NPS" size="8">&nbsp;<br>		
+							</div><!--End of top placeholders part--> 
+						</div>
+					</div>
+					
+				<div class="row"> 
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:70%; width:100%;"> 	
+					
+					<div class="middle_table" >
+					<table id="inner" border="1"  style="background-color:#eee;">
+					<caption><u><b>Shipping Address</b></u></caption>
+					<tr>	
+						<td>
+						<b><u>Order Summery : </u><br></b>
+						<br><b>Order No.:</b>&nbsp; SH0026<br>
+						<b>Order Detail:</b>&nbsp;Short term Trading in DAM for 14/07/2017<br>
+						<b>Bid Price :&nbsp;</b> <input type="text" value="29.51"size="8">&nbsp;<br>
+						<b>Total Volume ::&nbsp; </b><input type="text" value="199.96" size="8">&nbsp;<br><br>
+						<div id="welcomeDiv"  style="display:none;" class="answer_list"> 
+						<b>Trade amount:</b>&nbsp;29.51 * 199.96 = 5906.81 €<br>
+						<b>Exchange Commission :&nbsp;</b> 0.56 €&nbsp;<br>
+						<b>GST (B):</b>&nbsp;08.7% = 513.89€<br>
+						<b>Transmission Charge:&nbsp;</b> € 0.10&nbsp;<br>
+						<font color="red"><b>Total Amount (A + B + C):&nbsp;€ 6421.36</b></font>
+						</div><!--End of div to be displayed on calculate button click-->
+						</td>
+						
+						<td>
+						<br><b>Id:</b>&nbsp;DoK505964<br>
+						<b>Name:</b>&nbsp;CZE
+						<b>Phone:</b>&nbsp;+46 (0) 8 555 166 <br>
+						<b>Email:</b>&nbsp;DoK505964 @EEX.net<br>
+						<b>Address:</b>&nbsp;Str. Fabrica de Glucoza,<br> Nr. 21, Sector 2,<br> Bucuresti,Romania<br>
+						</td>
+						
+						<td>
+						<br><b>Contract Details:</b>&nbsp;&nbsp; Energy Volume=&nbsp;199.96 MW<br>
+						<b>Voltage= </b>&nbsp;66Kv<br>
+						<b>Frequency=</b>&nbsp;60 Hz<br>
+						<b>Delivery Zone=</b>&nbsp;NE031/NW020<br>
+						<b>Payment = </b>&nbsp;Within 15/07/2017<br>
+						<b>Bid Time </b>=&nbsp;10am - 12.00 pm of <br> &nbsp;&nbsp; 13/07/2017 <br>
+						<b>Result =</b>&nbsp;3pm of 13/07/2017<br>
+						<b>Confirmation time =</b>&nbsp;(3.00-5.00)pm of 13/07/2017<br>
+						</td>
+						
+					</tr>
+					</table><!--End of inner table-->	
+					</div><!--End of inner table-->
+					
+					</div>
+				</div>	
+					
+			<div class="row"> 
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:20%;width:100%"> 			
+					<div class="bottom_placeholder">
+						<br>
+						<b>Estimate Delivery:</b>Tommorow 14/07/2017 between 19.00-19.15 Time Slot   
+						<br><b>Risk Free Bid Vol:</b> <input type="text"  value="182.27 MW - 219.01 MW" >&nbsp;
+						<br><b>Risk Free Bid Price :</b> <input type="text" name="timeperiod" value="(28.72 - 30.76) Eu/MWh">&nbsp;
+					
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="background-color:white;height:20%;width:100%"> 	
+						<div class="buttons" align="center">
+						<a href="/short_term">	<button type="button" class="btn btn-primary">Cancel</button></a>
+						<a href="/dam_order_history"><button type="button" class="btn btn-primary">Submit</button></a>
+							<button type="button" class="btn btn-primary" onclick="showDiv()" >Calculate</button>
+						</div>
+					</div>
+					
+					</div><!--End of  placeholders part-->
+				</div>
+			</div>
+				
+				</div>
+
+					<div>
+      				  <%- include html-parts/index_right.html %>
+    				</div>
+	
+		</div>	
+			
+	</div>				
+							
+			
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/market_message.js"></script>
+    <script src="js/graph_1.js"></script>
+    <script src="js/option_sell_put.js"></script>
+
+</head>
+
+<body>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:650px">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:59px">
+                <div class="topbuttons">
+                    <a href="#" class="btn btn-info" role="button">Options</a>
+                    <a href="#" class="btn btn-info" role="button">SWAPs</a>
+                    <a href="#" class="btn btn-info" role="button">Futures</a>
+                    <a href="#" class="btn btn-info" role="button">Forwards</a>
+                    <a href="#" class="btn btn-info" role="button">FTR's/CFD's</a><br>
+                </div>
+                <!--End of top buttons part-->
+            </div>
+        </div>
+        <!--End of top buttons part-->
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="background-color:white;height:506px">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:66px">
+                        <br>:My Holdings
+                        <select class="selectpicker" id="sel_holdings" data-width="100px">
+                            <option value="?" selected="selected">Select Holdings</option>
+                            <option value="At the money" id="opt_1">At the money</option>     
+                            <option value="Out of the money" id="opt_2">Out of the money</option> 
+                            <option value="In the money" id="opt_3">In the money</option> 
+                            <option value="All" id="opt_4">All</option> 
+				        </select> &nbsp &nbsp &nbsp Expiry :
+                        <select class="selectpicker" id="sel_day" data-width="100px">
+                            <option value="?" selected="selected">Select Days</option>
+                            <option value="1" id="opt_1">1</option>     
+                            <option value="5" id="opt_2">5</option> 
+                            <option value="10" id="opt_3">10</option> 
+                            <option value="15" id="opt_4">15</option> 
+                            <option value="20" id="opt_2">20</option> 
+                            <option value="25" id="opt_4">25</option> 
+                            <option value="30" id="opt_4">30</option> 
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:341px">
+                        <table class="table table-striped table-bordered" style="margin-left:-10px;height:10%;">
+                            <tr>
+                                <th></th>
+                                <th>Option No.</th>
+                                <th>Strike Price/MWh</th>
+                                <th>Options Qty.</th>
+                                <th>Lot Size(MWh)</th>
+                                <th>Premium</th>
+                                <th>Expiry<br>Days</th>
+                            </tr>
+                            <% for(var i=0; i<holdings.length; i++) { %>                            
+                            <tr>
+                                <td><input type="checkbox" id="checkbox" onclick="ShowGraph_table(this)"></td>
+                                <td><%= holdings[i].OptNumber %></td>
+                                <td><%= holdings[i].OptStrikePrice %></td>
+                                <td><%= holdings[i].Optqty %></td>
+                                <td><%= holdings[i].OptLotSize %></td>
+                                <td><%= holdings[i].OptPremium %></td>
+                                <td><%= holdings[i].Expiry %></td>                                
+                            </tr>
+                            <% } %>  
+                            
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:35px">
+                        <div class="back_Continue_custom">
+                            <a href="/sell_put_table" class="btn btn-info" role="button" id="btn_continue">Continue</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--End of 1st column-->
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="graph_table" style="display:none">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:420px;">
+                        <div id="chartContainer"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <table class="table-striped table-bordered" style="height:130px;width:100%;">
+                            <tr>
+                                <th rowspan="2">Future Price<br>$/MWh</th>
+                                <th colspan="2">Utility A</th>
+                                <th colspan="2">Utility B</th>
+                            </tr>
+                            <tr>
+                                <th>Payment<br>$/MWh</th>
+                                <th>Comment</th>
+                                <th>Payment<br>$/MWh</th>
+                                <th>Comment</th>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>-2</td>
+                                <td>Loss</td>
+                                <td>2</td>
+                                <td>Profit</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>0</td>
+                                <td>Breaks Even</td>
+                                <td>0</td>
+                                <td>Profit</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>2</td>
+                                <td>Profit</td>
+                                <td>-2</td>
+                                <td>Profit</td>
+                            </tr>
+                        </table>
+                        <!--End of second inline-table-->
+                    </div>
+                </div>
+            </div>
+            <!--End of 2nd column-->
+        </div>
+        <!-- end of 2nd row-->
+    </div>
+
+    <div>
+        <%- include html-parts/index_right.html %>
+    </div>
+    <!-- end of middle section row (left + center +right)-->
+</body>
+
+</html>

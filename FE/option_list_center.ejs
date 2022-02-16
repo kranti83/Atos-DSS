@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/market_message.js"></script>
+    <script src="js/graph_1.js"></script>
+    <script src="js/option_list.js"></script>
+</head>
+
+<body>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:650px">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:59px">
+                <div class="topbuttons">
+                    <a href="#" class="btn btn-info" role="button">Options</a>
+                    <a href="#" class="btn btn-info" role="button">SWAPs</a>
+                    <a href="#" class="btn btn-info" role="button">Futures</a>
+                    <a href="#" class="btn btn-info" role="button">Forwards</a>
+                    <a href="#" class="btn btn-info" role="button">FTR's/CFD's</a><br>
+                </div>
+                <!--End of top buttons part-->
+            </div>
+        </div>
+        <!--End of top buttons part-->
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="background-color:white;height:506px">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:66px">
+                        <br> Time Period :
+                        <input type="text" name="timeperiod" value="" size="7" disabled>&nbsp &nbsp &nbsp Exchange :
+                        <input type="text" name="exchange" value="" size="7" disabled><br><br>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style="background-color:white;">
+                        <table class="table table-striped table-bordered " id="t_seller">
+                            <tr>
+                                <!-- <th>  </th> -->
+                                <th>Exchange</th>
+                                <th>StrikePrice</th>
+                                <th>StrikeDate</th>
+                                <th>Lot Size</th>
+                                <th>Premium<br>(/MWh)</th>
+                                <th>Seller Name</th>
+                                <th>Location<br>(POC)</th>
+                                <th>Type</th>
+                                <th>Order Qty</th>
+                            </tr>
+
+                            <% for(var i=0; i<optionlist.length; i++) { %>                            
+                            <tr>
+                                <!-- <td><input type="checkbox" id="checkbox" onclick="ShowGraphAndTable(this)"></td> -->
+                                <td id="td_optId_<%= i %>" hidden><%= optionlist[i].id %></td>
+                                <td><%= optionlist[i].Exchange %></td>
+                                <td id="td_strikePrice_<%= i %>"><%= optionlist[i].OptStrikePrice %></td>
+                                <td><%= optionlist[i].OptStrikeDate %></td>
+                                <td id="td_lotsize_<%= i %>"><%= optionlist[i].OptLotSize %></td>
+                                <td id="td_premium_<%= i %>"><%= optionlist[i].OptPremium %></td>
+                                <td id="td_sellerName_<%= i %>"><%= optionlist[i].SellerName %></td>
+                                <td><%= optionlist[i].SellerLocation %></td>
+                                <td><%= optionlist[i].SellerType %></td>
+                                <td><input class="optqty" type="number" name="optqty" id="ip_optqty_<%= i %>" min="0" style="width:4.8em" style="display:none"></td>
+                            </tr>
+                            <% } %>                            
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:51px">
+                        <div class="volume_text_custom">
+                            Total Volume :<input type="text" name="volume" id="ip_totalVol" size="10" readonly>
+                            Total Price:<input type="text" name="price" id="ip_totalPrice" size="10" readonly><br><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:35px">
+                        <div class="back_Continue_custom">
+                            <a href="/options" class="btn btn-info" role="button" id="btn_back">Back</a>
+                            <a href="/order_summary" class="btn btn-info" role="button" id="btn_continue" disabled="true">Continue</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--End of 1st column-->
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="graph_table" style="display:none">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:420px;">
+                        <div id="chartContainer"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <table class="table-striped table-bordered" style="height:130px;width:100%;">
+                            <tr>
+                                <th rowspan="2">Future Price<br>$/MWh</th>
+                                <th colspan="2">Utility A</th>
+                                <th colspan="2">Utility B</th>
+                            </tr>
+                            <tr>
+                                <th>Payment<br>$/MWh</th>
+                                <th>Comment</th>
+                                <th>Payment<br>$/MWh</th>
+                                <th>Comment</th>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>-2</td>
+                                <td>Loss</td>
+                                <td>2</td>
+                                <td>Profit</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>0</td>
+                                <td>Breaks Even</td>
+                                <td>0</td>
+                                <td>Profit</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>2</td>
+                                <td>Profit</td>
+                                <td>-2</td>
+                                <td>Profit</td>
+                            </tr>
+                        </table>
+                        <!--End of second inline-table---->
+                    </div>
+                </div>
+            </div>
+            <!--End of 2nd column-->
+        </div>
+        <!-- end of 2nd row-->
+    </div>
+
+    <div>
+        <%- include html-parts/index_right.html %>
+    </div>
+    <!-- end of middle section row (left + center +right)-->
+</body>
+
+</html>

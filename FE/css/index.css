@@ -1,0 +1,248 @@
+body{      
+  height:100%;
+  width:100%;      
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+   
+}
+
+.body{
+  padding: 10px;width: 100%;
+} 
+
+.header{
+  background: linear-gradient(to top, #D3D3D3,#FFFFFF);
+  width:  100%;
+}   
+
+.logo{
+   height:11px;
+   width:70px;
+   margin-top:15px;
+}
+.search-custom
+{
+	margin-top:9px;
+}
+.glyphicon-log-in-custom
+{
+	margin-top:15px;
+}
+.glyphicon-user-custom{
+	margin: 15px 0 0 -43px;
+}
+
+.log-in-user{
+  font-size: 12px;
+  color: #006699;
+}
+
+.user-account{
+  font-size: 12px;
+}
+
+/*dropdown navbar menu*/
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+   top:0;
+   left:100%;
+   margin-top:-6px;
+   margin-left:-1px;
+}
+  
+.dropdown-submenu > a:after {
+  border-color: transparent #333;
+  border-style: solid;
+  border-left-color: #ccc;
+  border-width: 5px 0 5px 5px;
+  content: " ";
+  display: block;
+  float: right;  
+  height: 0;     
+  width: 0;
+  margin-right: -10px;
+  margin-top: 5px;
+}
+ 
+.dropdown-submenu:hover>a:after {
+    border-left-color:#555;
+}
+
+ul.nav li:hover > ul.dropdown-menu {
+    display: block;
+}  
+
+.menu li a{  
+  padding-right: 50px;
+  color: white;
+}
+
+.sub_menu li a{
+  color: black;
+} 
+
+.menu li a:hover{
+  color: black;
+  background: #5CACEE;
+}
+
+.sub_menu li a:hover{
+  color: white;
+  background: #5CACEE;
+}
+
+/*side menubar*/
+
+.sidebar-nav
+{
+	margin:13px 0 0 -6px;	
+}
+
+.sidebar-nav li a {
+    display: block;    
+    text-decoration: none;
+    width: 200px;
+    height: 68px;
+    background: #0098cc;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;  
+    border-left:2px solid black;
+    border-right:2px solid black;
+    text-align: center;
+}
+
+.sidebar-nav li a{
+    color: blue;
+}
+
+.sidebar-nav li a:hover {
+    background-color: #d3d3d3;
+    color: black;
+}
+
+/* Graph */
+.graph{
+  margin-top:10px;
+}
+
+#canvas{
+  background:lightgrey;
+  margin-left: 60px;  
+  height: 580px;
+}
+
+.graph_header{
+  background:lightgrey;
+  margin-left: 60px;
+  margin-right: -550px; 
+}
+.custom-btn-group
+{
+	margin:40px 0 38px 0;
+}
+
+/* Bottom line buttons */
+
+.button1 {
+	font-size: 12px;
+	border-radius: 2px;
+	height:25px;
+	width:80px;
+}
+
+.button {
+    background-color: #13c3ef; 
+    border: none;
+    color: white;
+    padding: 6px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 25px 0px;
+    cursor: pointer;
+}
+
+/* Tickers */
+
+.bottom_tickers{	
+	margin:0 0 0 0;
+}
+
+.ticker_info{
+  background:#a6e9f9;height:40px;
+}
+
+/* Market Message */
+
+.market_msg{
+  margin-top:10px;
+  margin-left:-30px;
+  padding-bottom: -150px;
+  height: 736px; 
+  width: 224px; 
+}
+
+.msg_body{
+   background-color: #0098cc;
+   color:white;
+   padding:10px ;
+   font:14px Tahoma;
+   height:97%; 
+   width:100%;
+   margin:13px 0 0 7px;
+   
+}
+
+.carousel{
+     height:90%;
+     width: 100%;
+	
+}
+
+.item{
+  margin-top: 150px;
+}
+
+.custom-buttons{
+	margin-top:14px;
+	margin-left:45px;
+}
+
+/* Footer */
+.footer{
+  background-color: #006699; 
+  height: 18px;
+  position: relative;
+  bottom: 0;
+  left:0;
+  width:100%;
+}
+
+.ftr_space{
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 12px;
+  color:white;
+  
+}
+
+
+#market_news_url a{
+    color:white;
+}
+
+.topbuttons{
+	margin:16px 0 0 289px;
+	}
+	
+.volume_text_custom
+{
+	margin-left:76px;
+}	
+
+.back_Continue_custom{
+	margin-left:150px;
+}

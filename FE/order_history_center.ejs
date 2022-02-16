@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<head>
+    <title>DSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+
+    <link href="css/index.css" rel="stylesheet">
+	<link href="css/order_history.css" rel="stylesheet">
+	 <link href="css/certificate.css" rel="stylesheet">
+	<script src="js/market_message.js"></script>	
+	<script src="js/certificate.js"></script>	
+</head>
+
+<body>
+	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:550px">
+
+		<table class="table-striped table-bordered table-hovered" id="inner">
+			<br>
+			<caption><b>Order History</b></caption>
+
+			<tr style="background-color:#006699">
+				<th> </th>
+				<th>Order No</th>
+				<th>Date</th>
+				<th>Type</th>
+				<th>Exchange</th>
+				<th>No of options</th>
+				<th>Lot Size (MWh)</th>
+				<th>Premium ($/MWh)</th>
+				<th>Price($/MWh)</th>
+				<th>Status</th>
+				<th>Date to Expire</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="checkbox"></td>
+				<td>AQ217FH</td>
+				<td>11/07/2017</td>
+				<td>Buy/Call</td>
+				<td>NPS</td>
+				<td>1</td>
+				<td>50</td>
+				<td>2</td>
+				<td>16.00</td>
+				<td>
+					<font color="green">Complete</font>
+				</td>
+				<td>90</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="checkbox"></td>
+				<td>AQ107Fk</td>
+				<td>2/01/2017</td>
+				<td>Buy/Call</td>
+				<td>NPS</td>
+				<td>1</td>
+				<td>10</td>
+				<td>2</td>
+				<td>15.3</td>
+				<td>
+					<font color="red">Failed</font>
+				</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="checkbox"></td>
+				<td>AP053FH</td>
+				<td>15/03/2017</td>
+				<td>Buy/Call</td>
+				<td>NPS</td>
+				<td>3</td>
+				<td>5</td>
+				<td>2</td>
+				<td>16.8</td>
+				<td>
+					<font color="green">Complete</font>
+				</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="checkbox"></td>
+				<td>AQ217FK</td>
+				<td>2/01/2017</td>
+				<td>Buy/Call</td>
+				<td>NPS</td>
+				<td>1</td>
+				<td>10</td>
+				<td>2</td>
+				<td>15.3</td>
+				<td>
+					<font color="red">Failed</font>
+				</td>
+				<td>0</td>
+			</tr>
+		</table>
+		<!--inner table ends--><br>
+
+		<div class="buttons">
+			<a href="#" class="btn btn-primary" role="button" id="btn_certificate">Generate Certificate</a>
+			<a href="/options" class="btn btn-primary" role="button">Continue Trading</a>
+		</div>
+		<!--End of bottom buttons part-->
+	</div>
+
+	 <div>
+        <%- include html-parts/index_right.html %>
+    </div>
+    <!-- end of middle section row (left + center +right)-->
+
+	<div class="container">		  
+	  <!-- Modal -->
+	  	<div class="modal fade" id="certificate_modal" role="dialog">
+	    	<div class="modal-dialog">	    
+	      <!-- Modal content-->
+		      	<div class="modal-content">	
+					 <div class="modal-header">
+			          	<button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>  		       
+                    <form role="form" action="#">
+                        <div class="modal-body">
+                           <p><h1><img src="images/certificate.jpg" style="height:450px; width:550px"></h1></p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-primary" role="button" id="btn_print">Print</a>
+							<a href="images/certificate.jpg" class="btn btn-primary" role="button" id="btn_download" download>Download</a>
+                        </div>
+                    </form>
+                </div>
+            <!--End of Modal content-->
+            </div>
+        </div>
+    </div>
+    <!--End of certificate pop up-->
+
+</body>
+</html>

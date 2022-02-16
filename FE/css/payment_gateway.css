@@ -1,0 +1,16 @@
+.modal-content{
+  border: 3px solid #006699;
+}
+
+.modal-header,.modal-body,.modal-footer{
+  margin-top: 10px;
+}
+
+.modal-body{
+  font-size: 15px;
+}
+
+.modal-footer {
+  background-color: #f9f9f9;
+  text-align: center;
+}

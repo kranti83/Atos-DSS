@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Energy Utility</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"> 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+  <link href="css/industrial_center.css" rel="stylesheet">
+  <link href="css/suppliers.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row"> 
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:600px;"> 
+         
+                    <div class="domestic_consumption">                         
+						<table id="1" border="1" >   
+							<caption><b><font color="blue">Domestic Consumption Details</font></b></caption>
+							<tr><th>Corrected On December<br>2016 </th><th colspan="6">Consumption in GWh</th></tr>
+							<tr><th>heating of spaces</td><td>48 765</th><td>41 419</td><td>45 928</td><td>42 739</td><td>42 831</td><td>40 804</td></tr>
+							<tr><th>Residential buildings proper, total</th><td>46 365</td><td>39 339</td><td>43 663</td><td>40 643</td><td>40 690</td><td>38 760</td></tr>
+							<tr><th>-Detached houses</th><td>29 101</td><td>25 091</td><td>27 641</td><td>25 595</td><td>25 967</td><td>24 507</td></tr>
+							<tr><th>-Terraced houses</th><td>4 462</td><td>3 767</td><td>4 215</td><td>3 972</td><td>3 925</td><td>3 816</td></tr>
+							<tr><th>- Blocks of flats</th><td>12 802</td><td>10 481</td><td>11 807</td><td>11 076</td><td>10 798</td><td>10 437</td></tr>
+							<tr><th>Free-time residential buildings</th><td>2 399</td><td>2 080</td><td>2 265</td><td>2 097</td><td>2 140</td><td>2 044</td></tr>
+							<tr><th>Household appliances 1</th><td>9 092</td><td>8 320</td><td>8 856</td><td>8 395</td><td>8 099</td><td>7 886</td></tr>
+							<tr><th>- Lighting</th><td>2 702</td><td>2 482</td><td>2 349</td><td>2 115</td><td>1 919</td><td>1 876</td></tr>
+							<tr><th>- Other electrical equipment</th><td>5 564</td><td>5 039</td><td>5 793</td><td>5 583</td><td>5 491</td><td>5 330</td></tr>
+							<tr><th>Heating of saunas</th><td>2 880</td><td>2 871</td><td>2 894</td><td>2 902</td><td>2 924</td><td>2 920</td></tr>
+							<tr><th>Heating of domestic water</th><td>9 522</td><td>9 584</td><td>9 658</td><td>9 727</td><td>9 789</td><td>9 850</td></tr>
+							<tr><th>Housing, total</th><td>70 259</td><td>62 194</td><td>67 336</td><td>63 763</td><td>63 643</td><td>61 460</td></tr>
+						</table>
+                    </div>
+					
+				<div class="row">
+			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:300px;">
+				    <table id="t01">
+	                    <tr><td><br><p><strong>Search by consumer Id</strong></p></td></tr>
+						<tr><td>
+							<div class="search-custom"> 
+						        <ul class="nav navbar-nav navbar-left">	
+		          			        <li><input type="text" class="form-control" placeholder="Search" size="50px"></li>
+					
+		            		        <li><button class="btn btn-default" type="submit">
+            					        <i class="glyphicon glyphicon-search"></i></li>	
+							    </ul>
+						    </div>
+						</td></tr>
+						<tr><td><strong>Search by consumer Name</strong></td></tr>
+						<tr><td>
+							<div class="search-custom"> 
+						        <ul class="nav navbar-nav navbar-left">	
+		          			        <li><input type="text" class="form-control" placeholder="Search" size="20px"></li>
+					
+		            		        <li><button class="btn btn-default" type="submit">
+            					        <i class="glyphicon glyphicon-search"></i></li>	
+							    </ul>
+						    </div>
+						</td></tr>
+						<tr><td>
+						
+						<div class="topbuttons">
+						     <a href="#" class="btn btn-info" role="button">Cancel</a>
+						</div>
+						
+						</td></tr>
+					
+					</table>
+          
+                 </div> 
+				 
+			   </div> 		
+				</div>
+			
+			<div>
+        	<%- include html-parts/index_right.html %>
+    		</div>
+				
+			
+
+		</div>	
+	</div>				
+							
+</body>
+</html>

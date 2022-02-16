@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/market_message.js"></script>
+    <script src="js/graph_1.js"></script>
+    <script src="js/graph_2.js"></script>
+    <script src="js/graph_3.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!--body -->
+        <div class="row">
+            <!-- header -->
+            <%- include html-parts/com_header.html %>
+        </div>
+        <!-- end of header -->
+
+        <div class="row">
+            <!-- nav -->
+            <%- include html-parts/com_nav_bar.html %>
+        </div>
+        <!-- end of navigation row -->
+
+        <div class="row">
+            <!-- middle section-->
+            <%- include short_transaction_center.ejs %>
+        </div>
+        <!-- end middle)-->
+
+        <div class="row">
+            <%- include html-parts/com_ticker.html %>
+        </div>
+
+        <div class="row">
+            <%- include html-parts/com_footer.html %>
+        </div>
+        <!--footer ends here -->
+
+    </div>
+    <!-- end of container-fluid -->
+</body>
+
+</html>

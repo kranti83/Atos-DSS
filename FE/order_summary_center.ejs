@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>DSS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+	<link href="css/index.css" rel="stylesheet">
+	<link href="css/order_summary.css" rel="stylesheet">
+	<script src="js/market_message.js"></script>
+	<script src="js/order_summary.js"></script>		
+</head>
+
+<body>
+	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:550px">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:70px">
+				<div class="topbuttons">
+					<a href="#" class="btn btn-info" role="button">Options</a>
+					<a href="#" class="btn btn-info" role="button">SWAPs</a>
+					<a href="#" class="btn btn-info" role="button">Futures</a>
+					<a href="#" class="btn btn-info" role="button">Forwards</a>
+					<a href="#" class="btn btn-info" role="button">FTR's/CFD's</a><br>
+				</div>
+				<!--End of top buttons part-->
+			</div>
+
+		</div>
+		<!-- 4 button code ends-->
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:50px">
+				TimePeriod :<input type="text" name="timePeriod" size="8" disabled> 
+				Exchange :<input type="text" name="exchange" size="5" disabled>
+				Seller:<input type="text" name="sellerName" placeholder="##" size="5" disabled>
+				Strike Price:<input type="text" name="strikePrice" placeholder="##" size="5" disabled>
+				TotalVolume :<input type="text" name="totalVol"  size="5" disabled> 
+				Quantity:<input type="text" name="orderQty" placeholder="##" size="3" disabled>
+				TotalPrice:<input type="text" name="totalPrice" placeholder="0" size="3" disabled>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:400px">
+				<table id="inner" class="table table-bordered">
+					<tr>
+						<td>
+							<b><u>Order Summery : </u><br></b>
+							<br>Name 1: Company B<br> Strike Price:$16.00Mwh<br> Break even:$18.00MWh<br> Type:Utility
+							<br> Market Share:10%<br> Order Quantity:1<br> LoT Size:50<br> Volume:1*50=50MWh
+							<br> Premium Amont:$50*2=100$<br> GST:16.7%
+							<br>
+							<font color="red">Total Amount:$116.7</font>
+						</td>
+
+						<td>
+							<b><u>Shipping Address : </u><br></b>
+							<br>Id:C0001A<br> Phone:+4767109100
+							<br> Email:Org_A@NPS.Net
+							<br> Fax:0123456
+							<br> Address:Uk
+							<br>
+						</td>
+
+						<td>
+							<br>Contract Details: Energy Volume:50MWh<br> Voltage:66Kv
+							<br> Frequency:50Hz
+							<br> Delivery Zone:SW3<br> Drawl Zone:NW1<br>
+						</td>
+					</tr>
+				</table>
+				<!--End of inner table-->
+			</div>
+		</div>
+
+		<div class="buttons">
+			<a href="/options" class="btn btn-primary" role="button">Cancel</a>
+			<a href="/option_list" class="btn btn-primary" role="button">Edit</a>
+			<a href="/payment" class="btn btn-success" role="button">Proceed to Payment</a>
+		</div>
+		<!--End of bottom buttons part-->
+	</div>
+
+	<div>
+		<%- include html-parts/index_right.html %>
+	</div>
+	<!-- end of middle section row (left + center +right)-->
+
+</body>
+
+</html>

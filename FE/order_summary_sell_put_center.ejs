@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>DSS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+
+	<link href="css/index.css" rel="stylesheet">	
+	<link href="css/payment_gateway.css" rel="stylesheet">
+	<script src="js/market_message.js"></script>
+	<script src="js/order_summary_sell_put.js"></script>
+
+</head>
+
+<body>
+	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:550px">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:70px">
+				<div class="topbuttons">
+					<a href="#" class="btn btn-info" role="button">Options</a>
+					<a href="#" class="btn btn-info" role="button">SWAPs</a>
+					<a href="#" class="btn btn-info" role="button">Futures</a>
+					<a href="#" class="btn btn-info" role="button">Forwards</a>
+					<a href="#" class="btn btn-info" role="button">FTR's/CFD's</a><br>
+				</div>
+				<!--End of top buttons part-->
+			</div>
+
+		</div>
+		<!-- 4 button code ends-->
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:50px">
+				Time Period :<input type="text" name="timeperiod" size="7" placeholder="1-2 months" disabled> Exchange :<input type="text"
+				 name="exchange" size="3" placeholder="NPS" disabled> Volume :<input type="text" name="volume" size="3" placeholder="20MWh"
+				 disabled> Option No:<input type="text" name="option_no" placeholder="P0001" size="2" disabled> In hand options:
+				<input
+				 type="text" name="in_hand_options" placeholder="2" size="2" disabled>
+					Lot size:<input type="text" name="lot_size" placeholder="10MWh" size="4" disabled> Expiry:
+					<input type="text" name="expiry" placeholder="30 days" size="4" disabled>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;height:380px">
+				<table id="inner" class="table table-bordered">
+					<tr>
+						<td>
+							<b><u>Order Summery : </u></b><br>
+							<br><strong>Order No.:</strong> P0015
+							<br><strong> Order Detail:</strong>Put Option (1 month) from
+							<br>today to Company C
+							<br><strong>Strike Price:</strong>€ 14/MWh
+							<br><strong> Quantity:</strong>2
+							<br><strong>Lot size:</strong>10
+							<br><strong> Total Volume:</strong>20 MWh
+							<br><strong>Premium Amt (A):</strong>€ 40
+							<br><strong>GST (B):</strong>16.7%
+							<br><strong>Brokerage (C):</strong>€ 0.23
+							<br><strong><font color="red">TTotal Amount (A + B + C):€ 46.91</font></strong>
+						</td>
+
+						<td>
+							<b><u>Shipping Address : </u></b><br>
+							<br><strong>Id:</strong>Org_Comp_C
+							<br><strong>Name:</strong>Company C
+							<br><strong>Phone:</strong>+46 (0) 8 555 166
+							<br><strong> Email:</strong>Org_A@NPS.net
+							<br><strong> Address:</strong>Gustavslundsvägen 141 B,<br>167 51 Bromma, Sweden
+							<br>
+						</td>
+
+						<td>
+							<br><strong>Contract Details:</strong> Energy Volume:20MWh<br> Voltage:66Kv
+							<br> Frequency:50Hz
+							<br> Delivery Zone:SW3<br> Drawl Zone:NW1<br>
+						</td>
+					</tr>
+				</table>
+				<p><b>Estimate delivery: </b> 30 Days</p>
+				<!--End of inner table-->
+			</div>
+		</div>
+
+		<div class="buttons">
+			<a href="/options" class="btn btn-primary" role="button">Cancel</a>
+			<a href="/option_sell_put" class="btn btn-primary" role="button">Edit</a>
+			<a href="#" class="btn btn-success" role="button" id="btn_order_confirm">Confirm Order</a>
+		</div>
+		<!--End of bottom buttons part-->
+	</div>
+
+	<div>
+		<%- include html-parts/index_right.html %>
+	</div>
+	<!-- end of middle section row (left + center +right)-->
+
+	<div class="container">
+		<!-- Modal -->
+		<div class="modal fade" id="myOrder_modal" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<form role="form" action="/transaction_sell_put">
+						<div class="modal-body">
+							<p>
+								<h1>Thanks!!! Your Order is confirmed and will be delivered in 30 days</h1>
+							</p>
+						</div>
+						<div class="modal-footer">
+							<input type="submit" value="OK">
+						</div>
+					</form>
+				</div>
+				<!--End of Modal content-->
+			</div>
+		</div>
+	</div>
+	<!--End of payment gateway pop up-->
+
+</body>
+
+</html>

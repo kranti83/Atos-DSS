@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <script src="../js/market_message.js"></script>
+</head>
+
+<body>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4" style="background-color:white; height:552px;">
+        <div class="msg_body">
+            <!--Carousel section -->
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" id="marketNews" align="center">
+                    <div class="item active">
+                        <ul id="ul_marketNews" class="ObjPageMain">
+                            Market News <br><br>
+                           
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="carousel-inner" id="todaysIndices" align="center" style="display:none">
+                    <div id="div_marketIndices" class="item active">
+                        Today's Incides<br><br>
+                        <% for(var i=0; i<ObjPageMain.marketIndices.length-4; i++) {%>
+                            <li class="ObjPageMain">
+                                <span><%= ObjPageMain.marketIndices[i].exchange_name %></span>
+                                <span> / <%= ObjPageMain.marketIndices[i].market_type %></span>
+                                <span> / <%= ObjPageMain.marketIndices[i].param %></span>
+                                <span>=<%= ObjPageMain.marketIndices[i].value %></span><br>
+                            </li><br>
+                            <% } %>
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+            <div class="custom-buttons">
+                <button id="btn_marketNews" class="btn-info btn">Market News</button>
+                <span style="width:5em;"> </span>
+                <button id="btn_todaysIndices" class="btn-info btn">Today's Indices </button>
+            </div>
+
+        </div>
+        <!--Carousel section ends-->
+    </div>
+
+</body>
+
+</html>

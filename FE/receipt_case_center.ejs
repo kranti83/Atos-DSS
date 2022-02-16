@@ -1,0 +1,156 @@
+<html>
+
+<head>
+
+
+	<title>Energy Utility</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+
+	<link href="css/industrial_center.css" rel="stylesheet">
+	<link href="css/recepit_case1.css" rel="stylesheet">
+	<link href="css/certificate.css" rel="stylesheet">
+	<script src="js/market_message.js"></script>	
+	<script src="js/certificate.js"></script>	
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:600px;">
+
+				<div class="domestic_consumption">
+					<table id="main" border="0">
+
+
+						<tr>
+							<td>
+								<b>Receipt</b>
+							<a href="/dss">	<button type="button" class="btn btn-primary" style="margin-left: 175px">Back to main Menu</button></a>
+
+							<a href="/forecast">	<button type="button" class="btn btn-primary">Back to forecast</button></a>
+
+								<a href="/market_mix"><button type="button" class="btn btn-primary">Back to Market Mix</button></a>
+
+								<button type="button" class="btn btn-primary">My Hordings</button>
+							</td>
+						</tr>
+
+						<tr>
+							<table id="t1" border="1" style="margin-left: 192px">
+								<tr>
+									<td><br><br>Transaction number</td>
+									<td>C203/1</td>
+								</tr>
+								<tr>
+									<td>Date/Time</td>
+									<td>14/07/2017/1</td>
+								</tr>
+								<tr>
+									<td>Order number</td>
+									<td>DAM51638</td>
+								</tr>
+								<tr>
+									<td>Transaction Type:</td>
+									<td>Short term Through exchange</td>
+								</tr>
+								<tr>
+									<td>Quantity:</td>
+									<td>199.96MWh/1</td>
+								</tr>
+								<tr>
+									<td>Amount Paid:</td>
+									<td>€ 6421.36</td>
+								</tr>
+								<tr>
+									<td>Point of delivery/drawal</td>
+									<td>NPS/Zone (South 02)/Z3/041</td>
+								</tr>
+								<tr>
+									<td>Name :</td>
+									<td>Company C</td>
+								</tr>
+								<tr>
+									<td>Address:</td>
+									<td>Str. Fabrica de Glucoza, Nr. 21, Sector 2, Bucuresti,Romania/1</td>
+								</tr>
+								<tr>
+									<td>Phn number:</td>
+									<td>+47 67 10 91 00</td>
+								</tr>
+								<tr>
+									<td>Email:</td>
+									<td>DAM51638@EEX.net</td>
+								</tr>
+							</table>
+						</tr>
+
+						<tr>
+							<td>
+								<br><button type="button" class="btn btn-primary" style="margin-left: 224px">Print Receipt</button>
+							</td>
+							<td>
+								<button type="button" class="btn btn-primary">Download Receipt</button>
+							</td>
+							<td>
+								<a href="/short_term"><button type="button" class="btn btn-primary">Continue Trading</button></a>
+							</td>
+							<td>
+								<button type="button" class="btn btn-primary" id="btn_certificate">Generate Certificate</button>
+							</td>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+			<div>
+				<%- include html-parts/index_right.html %>
+			</div>
+
+			<div class="container">
+				<!-- Modal -->
+				<div class="modal fade" id="certificate_modal" role="dialog">
+					<div class="modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<form role="form" action="#">
+								<div class="modal-body">
+									<p>
+										<h1><img src="images/certificate.jpg" style="height:450px; width:550px"></h1>
+									</p>
+								</div>
+								<div class="modal-footer">
+									<a href="#" class="btn btn-primary" role="button" id="btn_print">Print</a>
+									<a href="images/certificate.jpg" class="btn btn-primary" role="button" id="btn_download" download>Download</a>
+								</div>
+							</form>
+						</div>
+						<!--End of Modal content-->
+					</div>
+				</div>
+			</div>
+			<!--End of certificate pop up-->
+		</div>
+	</div>
+
+
+
+
+
+
+
+</body>
+
+</html>

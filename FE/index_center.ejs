@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <script src="js/login.js"></script>
+</head>
+
+<body>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-color:white;height:552px;">
+        <div class="navbar sidebar-nav" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Schedule Power Cut</a></li>
+                <li><a href="#">Accidental Cut</a></li>
+                <li><a href="#">Planed Cut</a></li>
+                <li><a href="#">PPA Details</a></li>
+                <li><a href="#">RPO</a></li>
+                <li><a href="#">Network Status</a></li>
+                <li><a href="#">DSM Slabs</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" style="background-color:white;height:552px;">
+        <!-- graph code -->
+        <div class="custom-btn-group">
+            <div class="btn-group">
+                <button id="btn_graph1" type="button" class="btn btn-default">Graph 1</button>
+                <button id="btn_graph2" type="button" class="btn btn-default">Graph 2</button>
+                <button id="btn_graph3" type="button" class="btn btn-default">Graph 3</button>
+                <button id="btn_graph4" type="button" class="btn btn-default">Graph 4</button>
+                <button id="btn_graph5" type="button" class="btn btn-default">Graph 5</button>
+            </div>
+        </div>
+        <div id="chartContainer"></div>
+    </div>
+    <!-- graph code ends here -->
+
+    <div>
+        <%- include html-parts/index_right.html %>
+    </div>
+
+    <!-- end of middle section row (left + center +right)-->
+</body>
+
+</html>

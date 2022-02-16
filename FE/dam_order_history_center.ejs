@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Energy Utility</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"> 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+  <link href="css/industrial_center.css" rel="stylesheet">
+ <link href="css/dam_order_history.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="container-fluid">
+	
+	
+		<div class="row"> 
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:552px;"> 
+                
+				<div class="row"  >
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:10%;padding-left:20px;"> 
+							<div class="middle_line_buttons" >
+							<a href="/dss"><button type="button" class="btn btn-primary">Back to Main Menu</button></a>&nbsp;
+							<a href="/forecast"><button type="button" class="btn btn-primary">Back to Forecast</button></a>&nbsp;
+							<a href="/market_mix"><button type="button" class="btn btn-primary">Back to Market Mix</button></a>&nbsp;
+							<button type="button" class="btn btn-primary">My Orders</button>&nbsp;
+							
+							<button class="btn btn-primary" role="button"  onclick='document.getElementById("demo").innerHTML = "Processed"'>Reload</button>
+							
+							</div> <!--End of bottom buttons part--> 
+						</div>
+                    </div>
+					
+					<div class="row" style="margin-left: 60px">
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="background-color:white;height:90%;"> 
+							<table  border="1" >
+								<br>
+							<caption><b>Order History</b></caption>
+              
+							<tr>
+							<th></th>
+							<th>Order No</th>
+							<th>Date</th> 
+							<th>Type</th>
+							<th>Exchange</th>
+							<th>No of options</th> 
+							<th>Lot Size (MWh)</th>
+							<th>Premium ($/MWh)</th>
+							<th>Price($/MWh)</th>
+							<th>Volume</th>
+							<th>Status</th>
+							<th>Date to Expire</th>
+							</tr>
+						
+							<tr>
+							<td><input type="checkbox" id="checkbox"></td>
+							<td>AQ217FH</td>
+							<td>11/07/2017</td>
+							<td>Sell/Put</td>
+							<td>NPS</td>
+							<td>2</td>
+							<td>10</td>
+							<td>2</td>
+							<td>14.00</td>
+							<td>20</td>
+							<td><font color="green"><b>Complete</b></font></td>
+							<td>90</td>
+							</tr>
+				
+							<tr>
+							<td><input type="checkbox" id="checkbox"></td>
+							<td>AQ107FK</td>
+							<td>2/01/2017</td>
+							<td>Sell/Put</td>
+							<td>NPS</td>
+							<td>1</td>
+							<td>10</td>
+							<td>2</td>
+							<td>15.3</td>
+							<td>10</td>
+							<td><font color="red"><b>Failed</b></font></td>
+							<td>0</td>
+							</tr>
+  
+							<tr>
+							<td><input type="checkbox" id="checkbox"></td>
+							<td>AP053FH</td>
+							<td>15/03/2017</td>
+							<td>Sell/Put</td>
+							<td>NPS</td>
+							<td>3</td>
+							<td>5</td>
+							<td>2</td>
+							<td>16.8</td>
+							<td>15</td>
+							<td><font color="green"><b>Complete</b></font></td>
+							<td>0</td>
+							</tr>
+  
+							<tr>
+							<td><input type="checkbox" id="checkbox"></td>
+							<td>AQ107FK</td>
+							<td>2/01/2017</td>
+							<td>Sell/Put</td>
+							<td>NPS</td>
+							<td>1</td>
+							<td>24</td>
+							<td>2</td>
+							<td>15.3</td>
+							<td>24</td>
+							<td><font color="red"><b>Failed</b></font></td>
+							<td>0</td>
+							</tr>
+							
+							<tr>
+							<td><input type="checkbox" id="checkbox"></td>
+							<td>DAM51638</td>
+							<td>13/07/2017</td>
+							<td>ShortTerm DAM</td>
+							<td>EEX</td>
+							<td>---</td>
+							<td>---</td>
+							<td>---</td>
+							<td>29.54</td>
+							<td>196.96</td>
+							<td><font color="blue"><b><p id="demo">Saved</p></b></font></td>
+							<td>14/07/2017</td>
+							</tr>
+							
+							</table>
+						<br>
+						</div>	
+					</div>
+						
+					<div class="row"> <!-- buttons-->
+					    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="background-color:white;height:10%"> 
+						     <div class="buttons1 " style="float: right;" >
+					         <a href="#"><button class="btn btn-primary" role="button" onclick='document.getElementById("demo").innerHTML = "Confirmed"'>Confirm</button></a>
+							 
+							
+					         <a href="#"><button class="btn btn-primary" role="button"  onclick='document.getElementById("demo").innerHTML = "Cancelled"'>Cancel</button></a>
+								<a href="/payment_short_term" class="btn btn-primary" role="button">Pay</a>
+					        </div> <!--End of buttons part-->  
+						</div>
+					</div>	<!-- buttons row ends-->
+						
+					<div class="row"> <!-- buttons-->
+					    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="background-color:white;height:10%"> 
+						     <div class="buttons1" >
+					           	<a href="#" class="btn btn-primary" role="button">Generate Certificate</a>
+					           	<a href="/short_term" class="btn btn-primary" role="button">Continue Trading</a>
+								<a href="#" class="btn btn-primary" role="button">Generate Reciept</a>
+					        </div> <!--End of buttons part-->  
+						</div>
+					</div>	<!-- buttons row ends-->
+				
+				</div>
+
+			<div class="row">	
+				<div>
+      			 <%- include html-parts/index_right.html %>
+    			</div>
+			</div>
+			
+		</div>	
+	</div>				
+							
+			
+</body>
+</html>
